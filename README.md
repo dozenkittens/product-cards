@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Практическая работа №1.5 - Стилизация
 
-## Getting Started
+## Краткое описание
 
-First, run the development server:
+Самыми полезными оказались классы для адаптивной сетки (`grid-cols-1 sm:grid-cols-2 lg:grid-cols-4`), так как они позволяют в одну строчку задать поведение для телефона, планшета и ноутбука. Также часто использовались классы для скруглений (`rounded-[32px]`) и отступов (`p-4`, `mb-4`), которые ускоряют вёрстку. Для кнопок отлично подошли `rounded-full` и `transition-colors` для создания эффекта «таблетки» с плавным наведением. Класс `object-contain` помог вписать картинки в подложку без искажений.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Вопросы для самопроверки
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**1. Почему карточка это отдельный компонент?**
+Чтобы переиспользовать её в разных местах и не дублировать код.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**2. Классы для сетки:**
+`grid-cols-1 sm:grid-cols-2 lg:grid-cols-4`.
 
-## Learn More
+**3. Чем `object-contain` отличается от `object-cover`?**
+`contain` вписывает картинку целиком (могут быть пустые поля), `cover` заполняет всё пространство (может обрезать). Для товаров на подложке лучше `contain`.
 
-To learn more about Next.js, take a look at the following resources:
+**4. Произвольное скругление:**
+`rounded-[20px]`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**5. Зачем `key`?**
+Чтобы React понимал, какие элементы изменились при обновлении списка.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**6. Как проверить адаптивность?**
+Открыть `F12` и включить режим устройства (`Ctrl + Shift + M`).
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**7. Что будет без `@import 'tailwindcss'`?**
+Все утилитарные классы перестанут работать, стили пропадут.
